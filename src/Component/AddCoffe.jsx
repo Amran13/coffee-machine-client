@@ -4,6 +4,28 @@ const AddCoffe = () => {
     const handleAddCoffee = (e) => {
         e.preventDefault()
         console.log('submitted')
+        const form = e.target;
+
+        const name = form.name.value;
+        const quantity = form.quantity.value;
+        const supplier = form.supplier.value;
+        const taste = form.taste.value;
+        const category = form.category.value;
+        const details = form.details.value;
+        const photo = form.photo.value;
+
+        const newCoffe = {name, quantity, supplier, taste, category, details, photo}
+        console.log(newCoffe)
+
+        fetch('http://localhost:5000/coffees', {
+            method : 'POST',
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(newCoffe)
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
     }
     return (
         <div className='flex justify-center'>
