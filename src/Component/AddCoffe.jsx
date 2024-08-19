@@ -5,7 +5,6 @@ const AddCoffe = () => {
         e.preventDefault()
         console.log('submitted')
         const form = e.target;
-
         const name = form.name.value;
         const quantity = form.quantity.value;
         const supplier = form.supplier.value;
@@ -13,7 +12,6 @@ const AddCoffe = () => {
         const category = form.category.value;
         const details = form.details.value;
         const photo = form.photo.value;
-
         const newCoffe = {name, quantity, supplier, taste, category, details, photo}
         console.log(newCoffe)
 
@@ -30,7 +28,7 @@ const AddCoffe = () => {
     return (
         <div className='flex justify-center'>
             <img className='absolute' src={bg} alt="" />
-            <form  className='relative bg-zinc-100 p-8' onSubmit={handleAddCoffee}>
+            <form  className='relative bg-zinc-100 p-8 max-w-[1100px] my-20' onSubmit={handleAddCoffee}>
                 <h1 className='text-center font-2xl font-bold my-12'>Add New Coffee</h1>
                 <p className='my-10'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
                 {/* form name and quantity row */}
